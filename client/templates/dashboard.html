@@ -1,0 +1,27 @@
+<template name="dashboard">
+    <div class="container">
+        <div class="row">
+            <div class="control-group">
+                <div class="controls">
+                    <label class="checkbox inline" for="checkbox-invites">
+                        <input type="checkbox" name="checkboxes" id="checkbox-invites" value="invites">Invites
+                    </label>
+                    <label class="checkbox inline" for="checkbox-invites">
+                        <input type="checkbox" name="checkboxes" id="checkbox-public" value="public">Public
+                    </label>
+                    <label class="checkbox inline" for="checkbox-invites">
+                        <input type="checkbox" name="checkboxes" id="checkbox-in-progress" value="in-progress">In Progress
+                    </label>
+                    <input id="searchinput" name="searchinput" type="text" placeholder="search" class="input-xlarge search-query inline">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                {{#each games}}
+                    {{> dashboardGame this}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,53 @@
+<template name="body">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="z-index: 100;">
+        <div class="navbar-inner">
+            <div class="container">
+                <!--<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                <!--</button>-->
+                <a class="brand" href="/">Westeros</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Games<b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                {{#each games}}
+                                    <li><a href="/game/{{_id}}">{{name}}</a></li>
+                                {{/each}}
+                                <li class="divider"></li>
+                                <li><a href="/new">New</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li class="divider-vertical"></li>
+                        <li><a href="javascript:$('#players').toggle()">Players</a></li>
+                        <li><a href="javascript:$('#assets').toggle()">Assets</a></li>
+                        <li><a href="javascript:$('#panic').toggle()">Panic!</a></li>
+                    </ul>
+                    <div class="pull-right">
+                        {{loginButtons align="right"}}
+                    </div>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div><div style="height:100%; width:100%">{{renderPage}}</div></div>
+    <div id="panic" style="display: none; position: absolute; top: 0px; left: 0px; width: 100%; height:100%; z-index: 99; background-color: #000; color: #aaa;">
+        <br><br><br><br><br><br>hide all the things
+    </div>
+
+    <div id="players" style="display:none; position: absolute; top: 0px; left: 0px; width: 80px; height: 100%; z-index: 50;">
+        <div style="position: relative; height: 40px; width: 100%;"></div>
+        {{> players}}
+    </div>
+
+    <div id="assets" style="display:none; position: absolute; top: 0px; right: 0px; width: 80px; height: 100%; z-index: 50;">
+        <div style="position: relative; height: 40px; width: 100%;"></div>
+        {{> assets}}
+    </div>
+</template>

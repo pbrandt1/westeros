@@ -1,0 +1,51 @@
+<template name="new">
+    <div class="container">
+        <div class="row">
+            <div class="control-group">
+                <div class="controls">
+                    <label class="control-label" for="name">
+                        Game Name&nbsp;<input type="text" id="name" name="name" placeholder="randomName" class="input-xlarge">
+                    </label>
+
+                    <label class="checkbox inline" for="checkbox-random">
+                        <input type="checkbox" name="checkboxes" id="checkbox-random" value="random">Random Houses
+                    </label>
+                    <label class="control-label inline" for="greyjoy">
+                        <img src="/img/sigils/greyjoy.png" class="sigil" data-image="/img/sigils/greyjoy.png" /><input type="text" id="greyjoy" name="greyjoy" placeholder="Player Name" class="input-xlarge player">
+                        <span class="label label-success inline tag-enabled">Enabled</span>
+                        <span class="label label-info inline tag-reserved">Not Reserved</span>
+                    </label>
+                    <label class="control-label inline" for="lannister">
+                        <img src="/img/sigils/lannister.png" class="sigil" data-image="/img/sigils/lannister.png" /><input type="text" id="lannister" name="lannister" placeholder="Player Name" class="input-xlarge player">
+                        <span class="label label-success inline tag-enabled">Enabled</span>
+                        <span class="label label-info inline tag-reserved">Not Reserved</span>
+                    </label>
+                    <label class="control-label" for="tyrell">
+                        <img src="/img/sigils/tyrell.png" class="sigil" data-image="/img/sigils/tyrell.png" /><input type="text" id="tyrell" name="tyrell" placeholder="Player Name" class="input-xlarge player">
+                        <span class="label label-success inline tag-enabled">Enabled</span>
+                        <span class="label label-info inline tag-reserved">Not Reserved</span>
+                    </label>
+                    <label class="control-label" for="stark">
+                        <img src="/img/sigils/stark.png" class="sigil" data-image="/img/sigils/stark.png" /><input type="text" id="stark" name="stark" placeholder="Player Name" class="input-xlarge player">
+                        <span class="label label-success inline tag-enabled">Enabled</span>
+                        <span class="label label-info inline tag-reserved">Not Reserved</span>
+                    </label>
+                    <label class="control-label" for="baratheon">
+                        <img src="/img/sigils/baratheon.png" class="sigil" data-image="/img/sigils/baratheon.png" /><input type="text" id="baratheon" name="baratheon" placeholder="Player Name" class="input-xlarge player">
+                        <span class="label label-success inline tag-enabled">Enabled</span>
+                        <span class="label label-info inline tag-reserved">Not Reserved</span>
+                    </label>
+                    <label class="control-label" for="martell">
+                        <img src="/img/sigils/martell.png" class="sigil" data-image="/img/sigils/martell.png" /><input type="text" id="martell" name="martell" placeholder="Player Name" class="input-xlarge player">
+                        <span class="label label-success inline tag-enabled">Enabled</span>
+                        <span class="label label-info inline tag-reserved">Not Reserved</span>
+                    </label>
+                    <button id="send" name="send" class="btn btn-info">Send Invites</button>
+                    <button id="start" name="start" class="btn btn-succes disabled">Start Game</button>
+                    <input type="checkbox" name="checkbox-start" id="checkbox-start" checked="checked" value="start">Start Game Automatically
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
