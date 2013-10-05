@@ -40,8 +40,10 @@
           width: 1980,
           height: 2975
         });
-//        mapLayer.add(map);
+        mapLayer.add(map);
         mapLayer.draw();
+        territoryLayer.draw();
+
       };
       mapImage.src = '/img/GoTMap.jpg';
 
@@ -62,7 +64,6 @@
           height: 2975
         });
         territoryLayer.add(territories);
-        territoryLayer.draw();
       }
       territoryImage.src = '/img/GoTMapOutline.png';
       var getTerritoryHue = function(position) {
@@ -172,9 +173,13 @@
               writeMessage(Territories.findOne({$or: [{hue:cached.territoryHue}, {"port.hue":cached.territoryHue}]}).name);
             }
           }
-          $message.clearQueue();
-          writeMessage(Territories.findOne({$or: [{hue:territoryHue}, {"port.hue":territoryHue}]}).name);
-          $message.delay(1000).fadeOut(1000);
+          $message
+            .clearQueue()
+            .stop()
+            .text(Territories.findOne({$or: [{hue:territoryHue}, {"port.hue":territoryHue}]}).name)
+            .fadeIn(100)
+            .delay(1000)
+            .fadeOut(1000);
         });
       };
       sprite.onload = function() {
@@ -212,7 +217,7 @@
       /**
        * Message Banner
        */
-      $('body').append('<div id="message" style="display:none; position:relative; top: 0px; left:0px; width: 100%; text-align: center;"></div>');
+      $('body').append('<div id="message" style="display:none; position:relative; top: 0px; left:0px; width: 100%; text-align: center; background-color: #2e2e2e; color: #AEBDCC"></div>');
       $message = $("#message");
       var writeMessage = function(message) {
         $message.html(message);
