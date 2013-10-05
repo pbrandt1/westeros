@@ -157,7 +157,7 @@
           if (dragged.territoryHue !== cached.territoryHue) {
             $message
               .fadeOut(100, function() {
-                $(this).html(Territories.findOne({$or: [{hue:dragged.territoryHue}, {"port.hue":dragged.territoryHue}]}).name)
+                $(this).html(Territories.findOne({hue:dragged.territoryHue}).name);
                 dragged.messageComplete = true;
               })
               .fadeIn(100);
@@ -170,13 +170,13 @@
             token.setY(cached.y);
             tokenLayer.draw();
             if (cached.territoryHue !== 0) {
-              writeMessage(Territories.findOne({$or: [{hue:cached.territoryHue}, {"port.hue":cached.territoryHue}]}).name);
+              writeMessage(Territories.findOne({hue:cached.territoryHue}).name);
             }
           }
           $message
             .clearQueue()
             .stop()
-            .text(Territories.findOne({$or: [{hue:territoryHue}, {"port.hue":territoryHue}]}).name)
+            .text(Territories.findOne({hue:territoryHue}).name)
             .fadeIn(100)
             .delay(1000)
             .fadeOut(1000);
