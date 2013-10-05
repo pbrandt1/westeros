@@ -3,9 +3,9 @@
     name: "Might is Right",
     players: [
         { id: _id,
-          houseId: houseId,
-          admin: true}
+          house: house}
     ],
+    admins: [],
     settings: {
       private: true,
       randomHouses: false
@@ -18,6 +18,9 @@
     wildlingDecks: [ { }, { }],
     westerosDeck: [ _cardId: active or drawn ],
     neutralForcesTokens: [],
+    gameData: {},
+    privateData: {}
+
  */
 
 GameProps = function(game) {
@@ -43,6 +46,16 @@ if (Meteor.isServer) {
 if (Meteor.isClient) {
   Meteor.subscribe("games");
 }
+
+Meteor.methods({
+  /**
+   * Creates a game when someone presses "Start Game" after a propsed game has been filled.
+   * @param players: An array of players, ie [{house: "greyjoy", _id: "some user id"}, {house: "lannister", ...}]
+   */
+  createGame: function(players) {
+
+  }
+})
 
 // FIXTURE DATA
 if (Meteor.isServer && Games.find().count() === 0) {
